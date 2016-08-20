@@ -1,5 +1,9 @@
 package put.fc.sds.ps;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+
 /**
  * Created by E460 on 14.08.2016.
  */
@@ -7,8 +11,9 @@ package put.fc.sds.ps;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
 @Configuration
+@EnableAutoConfiguration
+@ComponentScan(basePackages = {"put.fc.sds"})
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
