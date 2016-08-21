@@ -1,14 +1,14 @@
 package put.fc.sds.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import put.fc.sds.domain.User;
-
-@Repository
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+@RepositoryRestResource
 public interface UserRepository extends CrudRepository<User, String> {
 
-	User getById(int id);
+	User getById(String id);
 
 	User getByLogin(String login);
 	User getByLoginAndPassword(String login,String password);
+	void deleteById(String id);
 }
