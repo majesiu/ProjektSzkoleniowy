@@ -1,8 +1,13 @@
 machine:
+  java:
+    version: oraclejdk8
+
+  services:
+    - postgresql
+
   environment:
-    CIRCLE_ENV: test
-    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
-    JDBC_DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+    JDBC_DATABASE_URL: jdbc:postgresql://ubuntu:@127.0.0.1:5432/circle_test
+    DATABASE_URL: : jdbc:postgresql://ubuntu:@127.0.0.1:5432/circle_test
     
 deployment:
   staging:
