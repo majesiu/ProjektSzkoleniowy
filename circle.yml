@@ -1,5 +1,7 @@
 test:
-
+  override:
+    - mvn test
+    
 deployment:
   staging:
     branch: master
