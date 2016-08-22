@@ -1,6 +1,7 @@
 machine:
   environment:
-    DATABASE_URL: postgres://xijfgmsxkeghfi:yYDw6LYZFF0XxIqfOySpzak5T5@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/d9qrijqn8nuchh
+    CIRCLE_ENV: test
+    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
     
 deployment:
   staging:
