@@ -1,5 +1,6 @@
-test:
-  override:
+machine:
+  environment:
+    DATABASE_URL: postgres://xijfgmsxkeghfi:yYDw6LYZFF0XxIqfOySpzak5T5@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/d9qrijqn8nuchh
     
 deployment:
   staging:
