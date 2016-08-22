@@ -12,6 +12,6 @@ machine:
     
 deployment:
   staging:
-    branch: master
+    branch: majesiu-heroku
     heroku:
       appname: projekt-szkoleniowy-sds
