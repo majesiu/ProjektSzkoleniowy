@@ -1,0 +1,7 @@
+test:
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: projekt-szkoleniowy-sds
