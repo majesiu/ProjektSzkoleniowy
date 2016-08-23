@@ -11,7 +11,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class GroupOrder {
 	@Id @GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
@@ -20,27 +27,5 @@ public class GroupOrder {
 	private String restaurantName;
 	@OneToMany(mappedBy = "groupOrder", cascade = CascadeType.ALL)
 	private List<IndividualOrder> individualOrders;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getRestaurantName() {
-		return restaurantName;
-	}
-	public void setRestaurantName(String restaurantName) {
-		this.restaurantName = restaurantName;
-	}
 	
-	public List<IndividualOrder> getIndividualOrders() {
-		return individualOrders;
-	}
-	public void setIndividualOrders(List<IndividualOrder> individualOrders) {
-		this.individualOrders = individualOrders;
-	}
-	
-	public GroupOrder()	{
-	
-	}
 }
