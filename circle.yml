@@ -1,5 +1,5 @@
 deployment:
   staging:
-    branch: majesiu-heroku
+    branch: heroku-rest-api
     heroku:
       appname: projekt-szkoleniowy-sds
