@@ -1,4 +1,4 @@
-package put.fc.sds.service;
+package put.fc.sds.ps;
 
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
