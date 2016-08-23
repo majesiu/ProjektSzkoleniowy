@@ -11,7 +11,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Product {
 	@Id @GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
@@ -22,31 +29,7 @@ public class Product {
 	private int prize;
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private List<IndividualOrder> individualOrders;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getPrize() {
-		return prize;
-	}
-	public void setPrize(int prize) {
-		this.prize = prize;
-	}
 	
-	public List<IndividualOrder> getIndividualOrders() {
-		return individualOrders;
-	}
-	public void setIndividualOrders(List<IndividualOrder> individualOrders) {
-		this.individualOrders = individualOrders;
-	}
 	
 	
 }

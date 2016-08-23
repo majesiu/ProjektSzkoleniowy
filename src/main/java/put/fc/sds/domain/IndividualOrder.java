@@ -9,7 +9,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class IndividualOrder {
 	@Id @GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
@@ -25,40 +32,5 @@ public class IndividualOrder {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public int getAmountPaid() {
-		return amountPaid;
-	}
-	public void setAmountPaid(int amountPaid) {
-		this.amountPaid = amountPaid;
-	}
-	
-	
-	public Product getProduct() {
-		return product;
-	}
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-	
-	public GroupOrder getGroupOrder() {
-		return groupOrder;
-	}
-	public void setGroupOrder(GroupOrder groupOrder) {
-		this.groupOrder = groupOrder;
-	}
-	
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-	public IndividualOrder() {
-	}
+
 }
