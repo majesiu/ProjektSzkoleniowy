@@ -22,7 +22,7 @@ public class UserController {
 		return userRepository.getByLoginAndPassword(user.getLogin(),user.getPassword());
 	}
 	
-	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	@RequestMapping(value = "/users", method = RequestMethod.POST)
     public User user(@RequestBody @Valid User user) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
