@@ -19,7 +19,7 @@ public class UserController {
 	PasswordEncoder passwordEncoder;
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public User login(@RequestBody User user) {
-		return userRepository.getByLoginAndPassword(user.getLogin(),user.getPassword());
+		return userRepository.getByLogin(user.getLogin());
 	}
 	
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
