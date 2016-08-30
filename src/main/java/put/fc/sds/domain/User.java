@@ -26,11 +26,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class User {
-	@Id @GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
-    private String id;
+	@Id
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	private String id;
 	@Size(min = 5)
-	@Column(unique=true)
+	@Column(unique = true)
 	@NotNull
 	private String login;
 	@Size(min = 7)
@@ -39,12 +40,17 @@ public class User {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<IndividualOrder> individualOrders;
-	
 
 	public User(String login, String password) {
 		this.login = login;
 		this.password = password;
 	}
-	
-	
+
+	public User(User user) {
+		this.id = user.id;
+		this.login = user.login;
+		this.password = user.password;
+		
+	}
+
 }
