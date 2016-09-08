@@ -11,6 +11,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,6 +27,7 @@ public class GroupOrder {
     private String id;
 	@NotNull
 	private String restaurantName;
+	@JsonIgnore
 	@OneToMany(mappedBy = "groupOrder", cascade = CascadeType.ALL)
 	private List<IndividualOrder> individualOrders;
 	
