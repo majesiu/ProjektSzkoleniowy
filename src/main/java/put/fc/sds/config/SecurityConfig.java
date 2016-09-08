@@ -1,4 +1,4 @@
-package put.fc.sds.ps;
+package put.fc.sds.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -45,6 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	  public void configure(WebSecurity web) throws Exception {
 	    web
 	      .ignoring()
+	      .antMatchers(HttpMethod.GET,"/")
+	      .antMatchers(HttpMethod.GET,"/second")
 	      .antMatchers(HttpMethod.POST,"/user")
 	      .antMatchers(HttpMethod.GET,"/login");
 	  }
